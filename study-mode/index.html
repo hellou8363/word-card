@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <script src="./index.js" defer></script>
+    <title>Word Card</title>
+  </head>
+  <body>
+    <div class="container">
+      <a href="../index.html" class="back"></a>
+      <select name="days" class="date-selection">
+        <option value="day1">Day 1</option>
+        <option value="day2">Day 2</option>
+        <option value="day3">Day 3</option>
+        <option value="day4">Day 4</option>
+        <option value="day5">Day 5</option>
+      </select>
+      <div class="card-box">
+        <button type="button" class="btn-left"></button>
+        <div class="card">
+          <div class="word on"></div>
+          <div class="meaning"></div>
+        </div><!-- card -->
+        <button type="button" class="btn-right"></button>
+      </div><!-- card-box -->
+    </div><!-- container -->
+  </body>
+</html>

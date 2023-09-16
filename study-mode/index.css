@@ -1,0 +1,64 @@
+.back {
+  width: 30px;
+  height: 30px;
+  margin: 20px;
+  display: inline-block;
+  background: url(../img/home.svg);
+}
+.container {
+  width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.date-selection {
+  width: 100px;
+  border: 0;
+  padding: 10px;
+  color: darkgray;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 auto 20px;
+}
+.card-box {
+  display: flex;
+  flex-direction: row;
+}
+.card {
+  width: 400px;
+  height: 200px;
+  border: 1px solid rgb(245, 245, 245);
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 10px lightgray;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  backface-visibility: hidden;
+}
+.meaning {
+  display: none;
+}
+.word,
+.meaning {
+  font-size: 24px;
+  font-weight: bold;
+}
+.btn-left,
+.btn-right {
+  width: 50px;
+  height: 50px;
+  border: none;
+  margin: auto 20px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.btn-left {
+  background: url(../img/left-button.svg);
+}
+.btn-right {
+  background: url(../img/right-button.svg);
+}
