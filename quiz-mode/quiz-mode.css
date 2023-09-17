@@ -1,0 +1,53 @@
+.count {
+  text-align: center;
+  font-weight: bold;
+  color: darkgray;
+  margin: 0 auto 20px;
+}
+.date-box {
+  width: 400px;
+  height: 200px;
+  border-radius: 10px;
+  background-color : rgb(245, 245, 245);
+  position: absolute;
+  /* left: 50%; */
+  /* top: 50%; */
+  /* transform: translate(-50%, -50%); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.date-selection {
+  width: 120px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+}
+.date-box button {
+  width: 120px;
+  height: 40px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.card-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.answer {
+  width: 400px;
+  height: 50px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background-color: rgb(245, 245, 245);
+  font-size: 18px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

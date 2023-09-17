@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./result.css" />
+    <script src="./result.js" defer></script>
+    <title>퀴즈 결과</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="correctAnswerList">
+        <p>correctAnswerList</p>
+        <table>
+          <thead>
+            <tr>
+              <td>단어</td>
+              <td>정답</td>
+            </tr>
+          </thead>
+          <tbody id="correct-answer-list"></tbody>
+        </table>
+      </div>
+      <div class="wrongAnswerList">
+        <p>wrongAnswerList</p>
+        <table>
+          <thead>
+            <tr>
+              <td>단어</td>
+              <td>정답</td>
+              <td>오답</td>
+            </tr>
+          </thead>
+          <tbody id="wrong-answer-list"></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

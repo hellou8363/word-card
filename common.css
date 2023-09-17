@@ -1,0 +1,33 @@
+.home {
+  width: 30px;
+  height: 30px;
+  margin: 20px;
+  display: inline-block;
+  background: url(../img/home.svg);
+}
+.container {
+  width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.card {
+  width: 400px;
+  height: 200px;
+  border: 1px solid rgb(245, 245, 245);
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 10px lightgray;
+  background-color: rgb(245, 245, 245);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.word,
+.meaning {
+  font-size: 24px;
+  font-weight: bold;
+}
+.meaning {
+  display: none;
+}

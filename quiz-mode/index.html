@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../common.css">
+  <link rel="stylesheet" href="./quiz-mode.css">
+  <script src="./quiz-mode.js" defer></script>
+  <title>퀴즈 모드</title>
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html" class="home"></a>
+    <p class="count">
+      <span class="current-count">0</span>
+      /
+      <span class="max-count">0</span>
+    </p>
+    <div class="card-box">
+      <div class="date-box">
+        <select name="days" class="date-selection">
+          <option value="day1">Day 1</option>
+          <option value="day2">Day 2</option>
+          <option value="day3">Day 3</option>
+          <option value="day4">Day 4</option>
+          <option value="day5">Day 5</option>
+          <option value="day6">Day 6</option>
+          <option value="day7">Day 7</option>
+          <option value="day8">Day 8</option>
+          <option value="day9">Day 9</option>
+          <option value="day10">Day 10</option>
+          <option value="day11">Day 11</option>
+          <option value="day12">Day 12</option>
+          <option value="day13">Day 13</option>
+          <option value="day14">Day 14</option>
+          <option value="day15">Day 15</option>
+          <option value="day16">Day 16</option>
+        </select>
+        <button type="button">선택</button>
+      </div><!-- date-box -->
+      <div class="card">
+        <div class="word"></div>
+      </div><!-- card -->
+      <div class="meaning">
+        <p class="answer"></p>
+        <p class="answer"></p>
+        <p class="answer"></p>
+      </div><!-- meaning -->
+    </div><!-- card-box -->
+  </div><!-- container -->
+</body>
+</html>

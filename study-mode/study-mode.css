@@ -1,0 +1,31 @@
+.date-selection {
+  width: 100px;
+  border: 0;
+  padding: 10px;
+  color: darkgray;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 auto 20px;
+}
+.card-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.btn-left,
+.btn-right {
+  width: 50px;
+  height: 50px;
+  border: none;
+  margin: auto 20px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.btn-left {
+  background: url(../img/left-button.svg);
+}
+.btn-right {
+  background: url(../img/right-button.svg);
+}

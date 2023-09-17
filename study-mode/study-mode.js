@@ -3,7 +3,7 @@ const cardLayout = selector(".card");
 const word = selector(".word");
 const meaning = selector(".meaning");
 const wordState = selector(".card .word");
-const selectedDate = selector(".date-selection");
+const dateSelection = selector(".date-selection");
 const wordFilePath = (day) => `../words/${day}.json`;
 
 let wordList = [];
@@ -35,7 +35,9 @@ function wordStyleInit() {
   wordState.className = "word on";
 }
 
-selectedDate.addEventListener("change", () => callDayFile(selectedDate.value));
+dateSelection.addEventListener("change", () =>
+  callDayFile(dateSelection.value)
+);
 
 cardLayout.addEventListener("click", () => {
   if (wordState.className === "word on") {
