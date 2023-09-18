@@ -1,0 +1,22 @@
+{
+  "home" : "(내가 사는) 집",
+  "house" : "집",
+  "roof" : "지붕",
+  "front door" : "현관문",
+  "doorbell" : "초인종",
+  "door" : "문",
+  "chain" : "사슬",
+  "lock" : "잠그다",
+  "living room" : "거실",
+  "sofa" : "소파",
+  "window" : "창문",
+  "bedroom" : "침실",
+  "bed" : "침대",
+  "room" : "방",
+  "wall" : "벽",
+  "kitchen" : "부엌",
+  "bathroom" : "욕실",
+  "bath" : "욕조",
+  "toilet" : "변기",
+  "wash" : "씻다"
+}

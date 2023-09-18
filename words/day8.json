@@ -1,0 +1,22 @@
+{
+  "pillow" : "베개",
+  "sheet" : "시트(깔거나 덮는 얇은 천) ",
+  "blanket" : "담요",
+  "bookcase" : "책장",
+  "bookshelf" : "책꽂이",
+  "put" : "넣다",
+  "coin" : "동전",
+  "piggy bank" : "돼지 저금통",
+  "mirror" : "거울",
+  "table" : "탁자",
+  "desk" : "책상",
+  "drawer" : "서랍",
+  "chair" : "의자",
+  "close" : "닫다",
+  "shelf" : "선반",
+  "lamp" : "램프, 등",
+  "closet" : "옷장",
+  "double bed" : "2인용 침대",
+  "single bed" : "1인용 침대",
+  "bunk bed" : "2층 침대"
+}

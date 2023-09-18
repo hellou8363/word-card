@@ -1,0 +1,22 @@
+{
+  "family" : "가족",
+  "my" : "나의",
+  "dad" : "아빠",
+  "mom" : "엄마",
+  "parents" : "부모님",
+  "father" : "아버지",
+  "mother" : "어머니",
+  "sibling" : "형제자매",
+  "sister" : "언니, 누나, 여동생",
+  "brother" : "형, 오빠, 남동생",
+  "daughter" : "딸",
+  "son" : "아들",
+  "husband" : "남편",
+  "wife" : "부인",
+  "who" : "누구",
+  "grandparents" : "조부모",
+  "grandfather" : "할아버지",
+  "grandmother" : "할머니",
+  "adult" : "어른",
+  "granddaughter" : "손녀"
+}
