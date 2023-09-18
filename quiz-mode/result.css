@@ -18,7 +18,7 @@ p {
   height: 30px;
   margin: 20px;
   display: inline-block;
-  background: url(../img/home.svg);
+  background-image: url(../img/home.svg);
 }
 
 .container {
