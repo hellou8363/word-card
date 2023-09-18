@@ -3,7 +3,7 @@
   height: 30px;
   margin: 20px;
   display: inline-block;
-  background-image: url(../img/home.svg);
+  background: url(./img/home.svg);
 }
 .container {
   width: 500px;

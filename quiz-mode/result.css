@@ -13,14 +13,6 @@ p {
   font-weight: bold;
 }
 
-.home {
-  width: 30px;
-  height: 30px;
-  margin: 20px;
-  display: inline-block;
-  background-image: url(../img/home.svg);
-}
-
 .container {
   width: 100%;
   display: flex;
