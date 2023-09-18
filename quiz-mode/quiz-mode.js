@@ -3,8 +3,7 @@ const currentCount = selector(".current-count");
 const maxCount = selector(".max-count");
 const wrongAnswerList = [];
 const correctAnswerList = [];
-const wordFilePath = (day) => `../words/${day}.json`;
-let wordList = [];
+const wordList = [];
 const currentAnswerList = [];
 let order = 1;
 
@@ -12,27 +11,45 @@ const randomValue = () =>
   wordList[Math.floor(Math.random() * wordList.length)][1];
 
 const callDayFile = (day) => {
-  fetch(wordFilePath(day))
+  fetch("../words/grade3.json")
     .then((response) => response.json())
     .then((data) => {
-      wordList = shuffleList(Object.entries(data));
+      if (day.length > 5) {
+        setDates(data, day);
+      } else {
+        wordList.push(...shuffleList(Object.entries(data[day])));
+      }
+
       selector(".meaning").style.display = "block";
       currentCount.innerText = order;
       maxCount.innerText = wordList.length;
 
-      wordSetting();
+      setWords();
     })
     .catch((error) => console.log(error));
 };
 
-function wordSetting() {
+function setDates(data, day) {
+  const result = day.slice(3).split("-");
+  const start = Number(result[0]);
+  const end = Number(result[1]);
+
+  for (let i = start; i <= end; i++) {
+    wordList.push(...shuffleList(Object.entries(data[`day${i}`])));
+  }
+}
+
+function saveLocalStorage() {
+  localStorage.setItem("correctAnswerList", JSON.stringify(correctAnswerList));
+  localStorage.setItem("wrongAnswerList", JSON.stringify(wrongAnswerList));
+  location.href = "./result.html";
+}
+
+function setWords() {
   const index = order - 1;
-  console.log(index);
 
   if (index >= maxCount.innerText) {
-    localStorage.setItem("correctAnswerList", JSON.stringify(correctAnswerList));
-    localStorage.setItem("wrongAnswerList", JSON.stringify(wrongAnswerList));
-    location.href = "./result.html";
+    saveLocalStorage();
   }
 
   selector(".word").innerText = wordList[index][0];
@@ -70,15 +87,22 @@ function answerCheck(userAnswer) {
   const correctAnswer = wordList.find((item) => item[0] === word)[1];
 
   if (correctAnswer === userAnswer) {
-    console.log("정답");
+    selector(".mark").style.background = "url(../img/circle_green.png)"
     correctAnswerList.push([word, userAnswer]);
   } else {
-    console.log("오답");
+    selector(".mark").style.background = "url(../img/x_red.png)"
     wrongAnswerList.push([word, correctAnswer, userAnswer]);
   }
 
+  selector(".mark").style.backgroundSize = "contain";
+  selector(".mark").style.display = "block";
+
+  setTimeout(() => {
+    selector(".mark").style.display = "none";
+  }, 500);
+
   currentAnswerList.length = 0;
-  wordSetting();
+  setWords();
 }
 
 function shuffleList(list) {

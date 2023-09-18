@@ -15,6 +15,7 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
+  z-index: 2;
 }
 .date-selection {
   width: 120px;
@@ -48,4 +49,14 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+.mark {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: none;
 }
