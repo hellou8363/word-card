@@ -9,20 +9,20 @@ const wordFilePath = (day) => `../words/${day}.json`;
 let wordList = [];
 let currentCardOrder = 0;
 
-fetch(wordFilePath("day1"))
+fetch("../words/grade3.json")
   .then((response) => response.json())
   .then((data) => {
-    wordList = Object.entries(data);
+    wordList = Object.entries(data["day1"]);
     word.innerText = wordList[0][0];
     meaning.innerText = wordList[0][1];
   })
   .catch((error) => console.log(error));
 
 const callDayFile = (day) => {
-  fetch(wordFilePath(day))
+  fetch("../words/grade3.json")
     .then((response) => response.json())
     .then((data) => {
-      wordList = Object.entries(data);
+      wordList = Object.entries(data[day]);
       word.innerText = wordList[0][0];
       meaning.innerText = wordList[0][1];
     })
