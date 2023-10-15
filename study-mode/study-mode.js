@@ -1,32 +1,47 @@
 const selector = (element) => document.querySelector(element);
+const wordFilePath = (day) => `../words/${day}.json`;
+
 const cardLayout = selector(".card");
 const word = selector(".word");
 const meaning = selector(".meaning");
 const wordState = selector(".card .word");
 const dateSelection = selector(".date-selection");
-const wordFilePath = (day) => `../words/${day}.json`;
 
-let wordList = [];
+const queryString = window.location.search;
+const searchParams = new URLSearchParams(queryString);
+const item = searchParams.get("item");
+
+let fileData;
+let wordList;
 let currentCardOrder = 0;
 
-fetch("../words/grade3.json")
-  .then((response) => response.json())
-  .then((data) => {
-    wordList = Object.entries(data["day1"]);
-    word.innerText = wordList[0][0];
-    meaning.innerText = wordList[0][1];
-  })
-  .catch((error) => console.log(error));
+if (item === "words2400") {
+  const grade = `grade${searchParams.get("grade")}`;
+  callFileInit(item, grade);
+}
 
-const callDayFile = (day) => {
-  fetch("../words/grade3.json")
+function callFileInit(item, value) {
+  fetch(`../words/${item}/${value}.json`)
     .then((response) => response.json())
     .then((data) => {
-      wordList = Object.entries(data[day]);
-      word.innerText = wordList[0][0];
-      meaning.innerText = wordList[0][1];
+      fileData = data;
+
+      for (const key in fileData) {
+        if (fileData.hasOwnProperty(key)) {
+          wordList = Object.entries(fileData[key]);
+          word.innerText = wordList[0][0];
+          meaning.innerText = wordList[0][1];
+          break;
+        }
+      }
     })
     .catch((error) => console.log(error));
+}
+
+const callKeyData = (key) => {
+  wordList = Object.entries(fileData[key]);
+  word.innerText = wordList[0][0];
+  meaning.innerText = wordList[0][1];
 };
 
 function wordStyleInit() {
@@ -36,7 +51,7 @@ function wordStyleInit() {
 }
 
 dateSelection.addEventListener("change", () =>
-  callDayFile(dateSelection.value)
+  callKeyData(dateSelection.value)
 );
 
 cardLayout.addEventListener("click", () => {

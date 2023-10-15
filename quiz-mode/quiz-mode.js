@@ -1,41 +1,58 @@
 const selector = (element) => document.querySelector(element);
+
 const currentCount = selector(".current-count");
 const maxCount = selector(".max-count");
+
 const wrongAnswerList = [];
 const correctAnswerList = [];
 const wordList = [];
 const currentAnswerList = [];
+
+const queryString = window.location.search;
+const searchParams = new URLSearchParams(queryString);
+const item = searchParams.get("item");
+
+let fileData;
 let order = 1;
 
 const randomValue = () =>
   wordList[Math.floor(Math.random() * wordList.length)][1];
 
-const callDayFile = (day) => {
-  fetch("../words/grade3.json")
+if (item === "words2400") {
+  const grade = `grade${searchParams.get("grade")}`;
+  callFileInit(item, grade);
+}
+
+function callFileInit(item, value) {
+  fetch(`../words/${item}/${value}.json`)
     .then((response) => response.json())
     .then((data) => {
-      if (day.length > 5) {
-        setDates(data, day);
-      } else {
-        wordList.push(...shuffleList(Object.entries(data[day])));
-      }
-
-      selector(".meaning").style.display = "block";
-      currentCount.innerText = order;
-      maxCount.innerText = wordList.length;
-
-      setWords();
+      fileData = data;
     })
     .catch((error) => console.log(error));
+}
+
+const callDayFile = (day) => {
+  if (day.length > 5) {
+    setData(day);
+  } else {
+    wordList.push(...shuffleList(Object.entries(fileData[day])));
+  }
+
+  selector(".meaning").style.display = "block";
+  currentCount.innerText = order;
+  maxCount.innerText = wordList.length;
+
+  setWords();
 };
 
-function setDates(data, day) {
+function setData(day) {
   const result = day.slice(3).split("-");
   const start = Number(result[0]);
   const end = Number(result[1]);
 
   for (let i = start; i <= end; i++) {
-    wordList.push(...shuffleList(Object.entries(data[`day${i}`])));
+    wordList.push(...shuffleList(Object.entries(fileData[`day${i}`])));
   }
 }
 
@@ -87,10 +104,10 @@ function answerCheck(userAnswer) {
   const correctAnswer = wordList.find((item) => item[0] === word)[1];
 
   if (correctAnswer === userAnswer) {
-    selector(".mark").style.background = "url(../img/circle_green.png)"
+    selector(".mark").style.background = "url(../img/circle_green.png)";
     correctAnswerList.push([word, userAnswer]);
   } else {
-    selector(".mark").style.background = "url(../img/x_red.png)"
+    selector(".mark").style.background = "url(../img/x_red.png)";
     wrongAnswerList.push([word, correctAnswer, userAnswer]);
   }
 
